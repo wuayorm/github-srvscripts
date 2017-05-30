@@ -5,12 +5,15 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+# Version : 1.0.2
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
 
 # Global variables
+export PATH=$PATH:/home/erocha/bashscripts
+
 
 exten="tar.gz"
 wikisite="/opt/atlassian/confluence/bin"
@@ -22,6 +25,7 @@ function fbackup() {
 
   backupdate=""
   srvname=$(hostname)
+  sudo rm -f /home/erocha/backups/*
 
   if [ -z $1 ]; then
      echo ""
@@ -158,6 +162,7 @@ function fbackup() {
 function dbbackup() {
 
 datadir="/data/var/lib/mysql"
+sudo rm -f /home/erocha/backups/*
 
  if [[ -d $datadir/confluence && -d $datadir/jiradb && -d $datadir/crowd ]]; then
 	backupdate=""
@@ -202,7 +207,20 @@ datadir="/data/var/lib/mysql"
 
 
 function srvstat() {
-	tail -200 /opt/atlassian-crowd-2.9.1/apache-tomcat/logs/catalina.out
+
+  if [ $1 == "confluence" ]; then
+    sudo -i tail -200 /opt/atlassian/confluence/logs/catalina.out
+  elif [ $1 == "jira" ]; then
+    sudo -i tail -200 /opt/atlassian/jira/logs/catalina.out
+  elif [ $1 == "crowd" ]; then
+    sudo -i tail -200 /opt/atlassian-crowd-2.9.1/apache-tomcat/logs/catalina.out
+  else
+	  echo ""
+	  echo "*** $datadir doesn't exist ***"
+	  echo ""
+
+  fi
+
 	return 1
 }
 
