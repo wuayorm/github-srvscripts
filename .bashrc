@@ -226,11 +226,14 @@ function srvstat() {
     sudo -i tail -200 /opt/atlassian-crowd-2.9.1/apache-tomcat/logs/catalina.out
   else
 	  echo ""
-	  echo "*** doesn't exist ***"
+	  echo "Application $1 not found on this server: $(hostname) "
+	  echo "please make sure to type de correct name."
 	  echo ""
+	  echo "valid names are crowd, confluence or jira"
+	  echo ""
+	  return 1
 
   fi
 
-	return 1
 }
 
