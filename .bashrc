@@ -208,6 +208,16 @@ sudo rm -f /home/erocha/backups/*
 
 function srvstat() {
 
+  if [ -z $1 ]; then
+     echo ""
+     echo "*******************************************"
+     echo "Missing parameter for the application name "
+     echo "Usage: srvstat <application_name>"
+     echo "Examples: srvstat jira; srvstat confluence"
+     echo ""
+     return 1
+  fi
+
   if [ $1 == "confluence" ]; then
     sudo -i tail -200 /opt/atlassian/confluence/logs/catalina.out
   elif [ $1 == "jira" ]; then
@@ -216,7 +226,7 @@ function srvstat() {
     sudo -i tail -200 /opt/atlassian-crowd-2.9.1/apache-tomcat/logs/catalina.out
   else
 	  echo ""
-	  echo "*** $datadir doesn't exist ***"
+	  echo "*** doesn't exist ***"
 	  echo ""
 
   fi
