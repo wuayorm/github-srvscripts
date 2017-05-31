@@ -218,12 +218,15 @@ function srvstat() {
      return 1
   fi
 
-  if [ $1 == "confluence" ]; then
+  if [[ $1 == "confluence" && -f $wikisite/start-confluence.sh ]]; then
     sudo -i tail -200 /opt/atlassian/confluence/logs/catalina.out
-  elif [ $1 == "jira" ]; then
+    return 1
+  elif [[ $1 == "jira" && -f $jirasite/start-jira.sh ]]; then  
     sudo -i tail -200 /opt/atlassian/jira/logs/catalina.out
-  elif [ $1 == "crowd" ]; then
+    return 1
+  elif [[ $1 == "crowd" && -f $crowdsite/start_crowd.sh ]]; then  
     sudo -i tail -200 /opt/atlassian-crowd-2.9.1/apache-tomcat/logs/catalina.out
+    return 1
   else
 	  echo ""
 	  echo "Application $1 not found on this server: $(hostname) "
