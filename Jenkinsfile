@@ -7,6 +7,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 echo 'Pulling code from repo...'
+                checkout scm
             }
         }
         stage('Test') {
