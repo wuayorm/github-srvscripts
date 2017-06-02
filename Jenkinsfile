@@ -7,7 +7,8 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-                sh "git fetch --all"
+                sh "git pull master"
+                sh "git pull develop"
                 sh "git checkout master"
             }
         }
