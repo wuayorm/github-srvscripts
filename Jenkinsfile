@@ -8,7 +8,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 sh "git checkout master"
-                sh "git pull srv-scripts"
+                sh "git pull master"
             }
         }
         stage('Test') {
