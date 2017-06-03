@@ -8,7 +8,6 @@ pipeline {
             steps {
                 echo 'Building..'
                 sh "git fetch --all"
-                sh "git checkout master"
             }
         }
         stage('Test') {
