@@ -8,7 +8,6 @@ pipeline {
             steps {
                 echo 'Building..'
                 sh "git fetch origin"
-                sh "git checkout master"
                 sh "git branch -av"
             }
         }
