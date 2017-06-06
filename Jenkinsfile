@@ -3,7 +3,7 @@ node {
     // Scripted pipeline Version 1.0
     // agent any
 
-    stages {
+
         stage('Build') {
             steps {
                 echo 'Building..'
@@ -22,5 +22,4 @@ node {
                 echo 'Deploying....'
             }
         }
-    }
 }
