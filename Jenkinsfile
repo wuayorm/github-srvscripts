@@ -5,21 +5,15 @@ node {
 
 
         stage('Build') {
-            steps {
                 echo 'Building..'
                 checkout scm
                 sh "git fetch origin"
                 sh "git branch -av"
-            }
         }
         stage('Test') {
-            steps {
                 echo 'Testing..'
-            }
         }
         stage('Deploy') {
-            steps {
                 echo 'Deploying....'
-            }
         }
 }
