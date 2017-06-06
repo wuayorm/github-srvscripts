@@ -1,6 +1,6 @@
 node {
 
-    // Version 1.0.0
+    // Scripted pipeline Version 1.0
     // agent any
 
     stages {
