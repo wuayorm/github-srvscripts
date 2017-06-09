@@ -11,7 +11,7 @@ node {
                 sh "git branch -av"
                 sh "scp *.sh .bashrc erocha@test-crowd.esc13.net:/home/erocha/bashscripts"
                 echo 'Finish deploying to test-crowd...'
-                sh "scp *.sh .bashrc erocha@test-jira.esc13.net:/home/erocha/bashscripts"
+                sh "scp *.sh .bashrc erocha@10.64.0.233:/home/erocha/bashscripts"
                 echo 'Finish deploying to test-jira...'
                 //sh "scp *.sh .bashrc erocha@test-wiki.esc13.net:/home/erocha/bashscripts"
                 //echo 'Finish deploying to test-wiki...'
