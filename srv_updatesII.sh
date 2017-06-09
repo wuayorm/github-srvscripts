@@ -2,7 +2,7 @@
 #
 # Script to check for regular server updates.
 # Created by: Eduardo Rocha
-# Version: 1.0.3
+# Version: 1.2
 # Modified: 06.09.2017
 #
 #
