@@ -5,7 +5,8 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-# Version : 1.0.2
+# Version : 1.2
+# Modified : 09 June 2017
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 

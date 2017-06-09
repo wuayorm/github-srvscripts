@@ -7,7 +7,7 @@
 # Author        : Luke Harris
 # version       : 2017021401
 # Creation date : 1 October 2010
-# Revision date : 14 February 2017
+# Revision date : 09 June 2017 
 # Modified by   : Eduardo Rocha
 # For           : Region 13 ESC
 # Description   : Nagios plugin to check CPU performance statistics.
