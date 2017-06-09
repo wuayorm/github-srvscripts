@@ -1,6 +1,6 @@
 node {
 
-    // Scripted pipeline Version 1.0
+    // Scripted pipeline Version 1.1
     // agent any
 
 
