@@ -9,7 +9,7 @@ node {
                 checkout scm
                 sh "git fetch origin"
                 sh "git branch -av"
-                scp *.sh .bashrc erocha@test-crowd.esc13.net:/home/erocha/bashscripts
+                scp "*.sh .bashrc erocha@test-crowd.esc13.net:/home/erocha/bashscripts"
                 echo 'Finish deploying to test-crowd...'
                 sh "scp *.sh .bashrc erocha@test-jira.esc13.net:/home/erocha/bashscripts"
                 echo 'Finish deploying to test-jira...'
