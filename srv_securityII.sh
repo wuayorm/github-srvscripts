@@ -2,14 +2,14 @@
 #
 # Script to check for regular server updates.
 # Created by: Eduardo Rocha
-# Version: 1.2
-# Modified: 06.09.2017
+# Version: 2.1
+# Modified: 07.12.2017
 #
 #
 
 # remove previous files
 rm -f /home/erocha/*.txt
-sudo rm -f /home/erocha/backups/*
+# sudo rm -f /home/erocha/backups/*
 
 
 
@@ -36,7 +36,7 @@ return
 }
 
 
-if [[ -s /home/erocha/security.txt ]]; then
+if [[ -s /home/erocha/bashscripts/security.txt ]]; then
 
 	file_lines=$(wc -l < centos-update.txt) 
 	((start_lines=$file_lines - 2))
